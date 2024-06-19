@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: beige;
+}
+
+
+h2 {
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+}
+
+
+/*Mise en page du menu*/
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(225, 226, 230);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.foret {
+    padding: 10vh;
+    background-image: url('../Images/Image_foret_titre.jpg');
+    opacity: 1.2;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: fixed;
+    z-index: 10;
+
+}
+
+
+.conteneur-menu {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 5vh;
+    z-index: 10;
+
+
+}
+
+.BoutonP {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #0d0d0d, #373837);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    width: 33.33%;
+    height: 5vh;
+    z-index: 10;
+
+}
+
+.BoutonP:hover,
+.BoutonP:focus {
+    background: linear-gradient(to right, #6A89CC, #4A69BD);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+
+/*Fin Mise en page du menu */
+
+
+.Intro {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    font-size: 20px;
+    font-family: 'Calibri', sans-serif;
+}
+
+
+/* Mise en page des photos */
+.Photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+img {
+    text-align: center;
+}
+
+figcaption {
+    margin-top: 8px;
+}
+
+/* Fin Mise en page des photos*/
+
+/* Début Bas de Page */
+
+footer {
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    background-color: #0e1c2a;
+    opacity: 70%;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+    font-size: 20px;
+
+  }
+
+  @media (max-width: 768px) {
+    .contact-info {
+      flex-direction: row;
+    }
+  
+    .social-media {
+      flex-direction: column;
+    }
+  }
+  
+/* Fin Bas de Page */

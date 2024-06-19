@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "leaflet.sync": "^0.2.4"
+  }
+}

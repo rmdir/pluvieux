@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>900M</title>
+    <style>
+        /* Style pour les conteneurs des iframes */
+        .iframe-container {
+            width: 50%;
+            height: 50vh;
+            /* Utilise 50% de la hauteur de la fenêtre visible */
+            float: left;
+            /* Aligne les conteneurs horizontalement */
+        }
+
+        /* Style pour les iframes */
+        iframe {
+            width: 100%;
+            height: 90%;
+
+            display: block;
+
+            border: 2px solid #000;
+
+            box-sizing: border-box;
+
+        }
+
+        /* Style pour les légendes */
+        .legend {
+            width: 100%;
+            height: 10%;
+
+            display: block;
+            text-align: center;
+
+            line-height: 2;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="iframe-container">
+        <iframe src="map_precipitation.html"></iframe>
+        <div class="legend">Precipitation</div>
+    </div>
+    <div class="iframe-container">
+        <iframe src="map_ndvi.html"></iframe>
+        <div class="legend">NDVI</div>
+    </div>
+    <div class="iframe-container">
+        <iframe src="map_pressure.html"></iframe>
+        <div class="legend">Pressure</div>
+    </div>
+    <div class="iframe-container">
+        <iframe src="map_temperature.html"></iframe>
+        <div class="legend">Temperature</div>
+    </div>
+
+
+
+</body>

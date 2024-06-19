@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Mise en page du menu*/
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(225, 226, 230);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.foret {
+    padding: 10vh;
+    background-image: url('../Images/Image_foret_titre.jpg');
+    opacity: 1.2;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: fixed;
+}
+
+
+.conteneur-menu {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 5vh;
+
+}
+
+.BoutonP {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #0d0d0d, #373837);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    width: 33.33%;
+    height: 5vh;
+}
+
+.BoutonP:hover,
+.BoutonP:focus {
+    background: linear-gradient(to right, #6A89CC, #4A69BD);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*Fin Mise en page du menu */

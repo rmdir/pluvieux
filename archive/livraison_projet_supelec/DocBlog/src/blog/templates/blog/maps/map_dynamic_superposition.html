@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c91f56449a3974a12206cd72ccc7c4a5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+</head>
+<body>
+    
+    <div class=opacity-slider>
+        <label for="opacity1">Opacité de la carte Indice de végétation:</label>
+        <input type="range" id="opacity1" class="slider" min="0" max="1" step="0.1" value="1">
+        <br></div>
+    <style>
+        .opacity-slider {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Arial', sans-serif;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #4CAF50, #F44336);
+            outline: none;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+        .slider::-webkit-slider-thumb:hover {
+            background: #3E8E41;
+            transform: scale(1.2);
+        }
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+        .slider::-moz-range-thumb:hover {
+            background: #3E8E41;
+            transform: scale(1.2);
+        }
+        .slider-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    </style>
+    <script>
+
+        var sliders = document.querySelectorAll('.slider');
+        var tileLayers = document.querySelectorAll('.leaflet-tile-pane > .leaflet-layer');
+
+        sliders.forEach(function (slider, index) {
+            slider.addEventListener('input', function (e) {
+                tileLayers[index + 1].style.opacity = e.target.value;
+            });
+        });
+        </script>
+    
+        <div style="position: fixed; bottom: 50px; right: 50px; width: 300px; height: 70px; 
+                    background-color: white; border: 2px solid grey; z-index: 9999; font-size: 14px;">
+            <div style="padding: 5px 10px; font-weight: bold;">Indice de végétation</div>
+            <div style="height: 10px; background: linear-gradient(to right, #ffffff, #ce7e45, #df923d, #f1b555, #fcd163, #99b718, #74a901, #66a000, #529400, #3e8601, #207401, #056201, #004c00, #023b01, #012e01, #011d01, #011301);"></div>
+            <div style="display: flex; justify-content: space-between; padding: 0 10px;">
+                <span>0  </span>
+                <span>9000  </span>
+            </div>
+        </div>
+    
+    
+            <div class="folium-map" id="map_c91f56449a3974a12206cd72ccc7c4a5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c91f56449a3974a12206cd72ccc7c4a5 = L.map(
+                "map_c91f56449a3974a12206cd72ccc7c4a5",
+                {
+                    center: [46.529, 6.746],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_384bbf238984383f62a0d4cdcf7e3e5c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_384bbf238984383f62a0d4cdcf7e3e5c.addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+        
+    
+            var tile_layer_de03bc673f847115e1e5cde891ef659a = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-baptistebarraque/maps/318b29b7863dd381a2110c985a0a88b2-b0701a347f978f4c4c5e8cde87a5918d/tiles/{z}/{x}/{y}",
+                {"attribution": "NDVI", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_de03bc673f847115e1e5cde891ef659a.addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+        
+    
+            var layer_control_4a255f8be8bbe885ce378e72a87b6420_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_384bbf238984383f62a0d4cdcf7e3e5c,
+                },
+                overlays :  {
+                    "NDVI" : tile_layer_de03bc673f847115e1e5cde891ef659a,
+                },
+            };
+            let layer_control_4a255f8be8bbe885ce378e72a87b6420 = L.control.layers(
+                layer_control_4a255f8be8bbe885ce378e72a87b6420_layers.base_layers,
+                layer_control_4a255f8be8bbe885ce378e72a87b6420_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": true, "position": "topright", "title": "Expand me", "titleCancel": "Exit me"}
+            ).addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+        
+    
+
+            var geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_52f2f84f327579349ba9dff3adfc015a = geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a["provider"];
+
+            var customGeocoder_geocoder_52f2f84f327579349ba9dff3adfc015a = L.Control.Geocoder[ geocoderName_geocoder_52f2f84f327579349ba9dff3adfc015a ](
+                geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a['providerOptions']
+            );
+            geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a["geocoder"] = customGeocoder_geocoder_52f2f84f327579349ba9dff3adfc015a;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_52f2f84f327579349ba9dff3adfc015a['zoom'] || map_c91f56449a3974a12206cd72ccc7c4a5.getZoom();
+                map_c91f56449a3974a12206cd72ccc7c4a5.setView(e.geocode.center, zoom);
+            }).addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+
+        
+    
+            var locate_control_0208b13ff53f8e3a3c7fd93da14e0bb2 = L.control.locate(
+                {"initialZoomLevel": 2}
+            ).addTo(map_c91f56449a3974a12206cd72ccc7c4a5);
+            
+        
+</script>
+</html>

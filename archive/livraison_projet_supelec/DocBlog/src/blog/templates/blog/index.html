@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>900M</title>
+  <link href="../../static/css/index.css" rel="stylesheet">
+</head>
+
+<header>
+
+  <h1 class="foret"> 900M</h1>
+
+
+  <div>
+    <div class="conteneur-menu">
+      <a href="/blog/index" class="BoutonP">Présentation</a>
+      <a href="/blog/Cartes" class="BoutonP">Cartes</a>
+      <a href="/blog/Statistiques" class="BoutonP">Gestion de données</a>
+    </div>
+  </div>
+
+</header>
+
+<main>
+
+  <body>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2>INTRODUCTION</h2>
+    <br>
+
+    <p class="Intro">
+      Ce site vous permet d'accéder à un ensemble de données météorologiques et végétales. Vous pouvez, dans la section
+      <a href="/blog/Cartes"> Cartes </a> de ce site, choisir les paramètres que vous souhaitez exploiter et générer une
+      carte combinant
+      ces paramètres. Cela vous permettra d'optimiser la plantation de végétaux relativement aux conditions
+      météorologiques, où au contraire planter des végétaux dans une zone donnée avec l'objectif d'influencer le climat
+      local. En effet nous connaissons
+      souvent l'implication de la météo dans la croissance de certains de végétaux dans différents environnements, mais
+      nous sommes moins conscient de l'impact des végétaux sur la météo.
+      C'est par ailleurs l'objectif principal de notre mission « 990M ». Nous souhaitons vous permettre d'exploiter cet
+      outil informatique afin de planter 900 millions de végétaux et influencer alors de manière significative
+      l'évolution du réchauffement climatique. <br>
+      Dans une optique d'être le plus transparent avec notre communauté nous vous informons que nous utilisons les
+      données générer par la <a href="https://www.nasa.gov/"> Nasa </a> .
+    </p>
+    <br> <br><br> <br><br> <br>
+
+
+    <div id="videoContainer"></div>
+
+
+    <script>
+      // Obtenir l'élément conteneur de la vidéo
+      const videoContainer = document.getElementById('videoContainer');
+
+      // Créer l'élément vidéo
+      const videoElement = document.createElement('video');
+      videoElement.src = '../../static/Images/vidéo_fond.mp4';
+      videoElement.autoplay = true;
+      videoElement.loop = true;
+      videoElement.muted = true; // Désactiver le son de la vidéo par défaut
+      videoElement.playsinline = true; // Activer la lecture en ligne
+
+      // Ajouter l'élément vidéo au conteneur
+      videoContainer.appendChild(videoElement);
+
+      // Style du conteneur vidéo
+      videoContainer.style.position = 'absolute'; // Positionnement absolu
+      videoContainer.style.left = '0'; // Positionnement horizontal à gauche
+      videoContainer.style.width = '100%'; // Largeur sur toute la largeur de l'écran
+      videoContainer.style.height = '20vh'; // Hauteur de 30%
+      videoContainer.style.transform = 'translateY(-50%)'; // Centrer verticalement
+
+
+      // Style de l'élément vidéo
+      videoElement.style.width = '100%'; // Largeur sur toute la largeur de l'écran
+      videoElement.style.height = 'auto'; // Conserver le rapport hauteur/largeur de la vidéo
+      videoElement.style.objectFit = 'cover'; // Couvrir entièrement la zone du conteneur
+      videoElement.style.display = 'block'; // Afficher l'élément vidéo
+
+      // Redimensionner la vidéo pour l'adapter au conteneur tout en conservant le format d'image
+      videoElement.addEventListener('loadedmetadata', () => {
+        const ratioVideo = videoElement.videoWidth / videoElement.videoHeight;
+        const ratioConteneur = videoContainer.offsetWidth / videoContainer.offsetHeight;
+
+        if (ratioVideo > ratioConteneur) {
+          videoElement.style.width = 'auto';
+          videoElement.style.height = '20vh';
+        } else {
+          videoElement.style.width = '100%';
+          videoElement.style.height = '20vh';
+        }
+      });
+    </script>
+
+
+
+
+
+    <br> <br>
+    <p class="Intro"> Ce travail a été réalisé par 3 étudiants de l'école CentraleSupélec: </p>
+    <br><br>
+
+    <div class="Photos">
+      <div class="Photos1">
+        <img src="../../static/Images/Baptiste2.jpg" title="Baptiste Barraqué" alt="Baptiste Barraqué" />
+        <figcaption>Baptiste Barraqué</figcaption>
+      </div>
+
+      <div class="Photos2">
+        <img src="../../static/Images/Come.jpg" title="Come De Solere" alt="Come De Solere" />
+        <figcaption>Come De Solere</figcaption>
+      </div>
+
+      <div class="Photos3">
+        <img src="../../static/Images/Paul.jpg" title="Paul Lacas" alt="Paul Lacas" />
+        <figcaption>Paul Lacas</figcaption>
+      </div>
+    </div>
+    <br><br><br><br>
+    <p class="Intro">
+
+
+      La cartographie est un outil essentiel pour comprendre et analyser la relation complexe entre la météorologie et
+      les végétaux. Cette interaction, bien que souvent sous-estimée, joue un rôle crucial dans la régulation des
+      écosystèmes et la santé de notre planète. D'une part, les conditions météorologiques influencent de manière
+      significative la distribution, la croissance et la santé des plantes. De l'autre, les végétaux modifient et
+      peuvent améliorer les conditions météorologiques locales et globales.
+
+      Les plantes dépendent fortement des conditions météorologiques telles que la pluviométrie, la température, et
+      l'ensoleillement pour leur croissance. Une quantité adéquate de pluie, par exemple, est vitale pour la germination
+      des graines et le maintien de la vie des plantes. Trop ou trop peu de précipitations peuvent conduire à des
+      conditions de sécheresse ou de saturation en eau, affectant négativement les plantes. La température influence
+      également les cycles de croissance des plantes. Des températures plus chaudes peuvent accélérer ces cycles, tandis
+      que des températures froides peuvent les ralentir ou même endommager les tissus végétaux.
+
+      Inversement, les végétaux ont un impact sur la météorologie. Par le processus de transpiration, les plantes
+      libèrent de la vapeur d'eau dans l'atmosphère, contribuant ainsi à la formation de nuages et à l'augmentation de
+      l'humidité locale, ce qui peut à son tour influencer les modèles de précipitations locales. De plus, les forêts et
+      autres grands ensembles végétaux peuvent influencer les températures locales par l'effet d'ombrage et la
+      libération de composés organiques volatils qui affectent la qualité de l'air et le climat.
+
+      La cartographie moderne utilise des technologies avancées telles que les images satellites et les systèmes
+      d'information géographique (SIG) pour étudier ces interactions. Ces outils permettent de suivre les changements
+      dans la végétation et d'analyser l'impact des conditions météorologiques sur différentes échelles de temps et
+      d'espace. Ils sont également cruciaux pour modéliser les futurs changements climatiques et leur impact probable
+      sur les écosystèmes végétaux.
+
+      Grâce à la cartographie, il est possible de créer des modèles détaillés qui aident à prédire comment les
+      variations dans les conditions météorologiques affecteront la distribution et la santé des végétaux à l'avenir.
+      Ces modèles sont essentiels pour la planification en agriculture, la conservation des forêts, et la gestion des
+      ressources naturelles, soulignant l'importance de comprendre le lien entre la météo et les végétaux pour maintenir
+      et améliorer la biodiversité et la stabilité des habitats naturels.
+
+      En résumé, la cartographie révèle l'importance des interactions entre la météo et les végétaux, mettant en lumière
+      non seulement l'impact du climat sur la flore mais aussi le rôle essentiel que jouent les végétaux dans la
+      modulation des phénomènes météorologiques. Ces connaissances sont vitales pour la prise de décisions écologiques
+      informées et la préservation de notre environnement naturel.
+
+
+    </p>
+
+  </body>
+
+</main>
+
+<footer>
+  <div class="contact-info">
+    <h2>Contactez-nous</h2>
+    <p class="foot">Email: contact@exemple.com</p>
+    <pclass="foot">Téléphone: +33 1 23 45 67 89</p>
+      <pclass="foot">Adresse: 12 Rue du Commerce, 75000 Paris, France</p>
+  </div>
+
+  <div class="social-media">
+    <h2>Suivez-nous</h2>
+    <a href="https://www.facebook.com/exemple" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.twitter.com/exemple" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/exemple" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <div class="copyright">
+    <p>&copy; 2024 Votre Nom ou Nom de l'entreprise</p>
+  </div>
+</footer>
+
+
+</html>

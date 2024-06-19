@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>🌧️ Pluvieux ? ☘️</title>
+</head>
+<header></header>
+<main>
+ <div>
+   <label for="dateChoisie">Choose  :</label>
+   <form action="" method="post" novalidate>
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Envoyer">
+   </form>
+
+   <script>
+       function checkDatePattern(input) {
+           const pattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+           if (pattern.test(input.value)) {
+               const dateParts = input.value.match(pattern);
+               const year = dateParts[3], month = dateParts[2], day = dateParts[1];
+               const formattedDate = `${year}-${month}-${day}`;
+               console.log("date:", formattedDate)
+               return (formattedDate)
+           }
+
+       }
+       function getDate() {
+           return (document.getElementById('dateChoisie').value)
+       }
+   </script>
+  </div>
+</main>
+
+<footer> </footer>
+</body>
